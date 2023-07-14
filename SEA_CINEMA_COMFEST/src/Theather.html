@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SEA CINEMA</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #141414;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .header {
+      padding: 20px;
+      background: linear-gradient(to right, #222, #000);
+      text-align: center;
+    }
+    h1 {
+      color: #ffffff;
+      text-align: center;
+    }
+    .theater-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+    .theater-list li {
+      margin-bottom: 20px;
+      margin-left: 150px;
+      margin-right: 150px;
+    }
+    .theater-list li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      background-color: #f2f2f2;
+      display: block;
+      padding: 8px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .theater-list li a:hover {
+      background-color: #e0e0e0;
+    }
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s;
+    }
+    .popup-overlay.show {
+      visibility: visible;
+      opacity: 1;
+    }
+    .popup-content {
+      background-color: #fff;
+      padding: 20px;
+      max-width: 400px;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .popup-content h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    .popup-content p {
+      color: #555;
+    }
+    .popup-content h3 {
+      margin-top: 20px;
+      color: #333;
+    }
+    .popup-content ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+    .popup-content li {
+      margin-bottom: 5px;
+      color: #555;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #888;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .nav-menu {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+
+    .nav-menu li {
+      margin: 0 10px;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #fff;
+      opacity: 0.8;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 10px 15px;
+      border-radius: 20px;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav>
+          <ul class="nav-menu">
+           <li><a href="movies.php">Movies</a></li>
+        <li><a href="ticket.php">Tickets</a></li>
+         <li><a href="balance.php">Balances</a></li>
+            <li><a href="Theather.html">Theater</a></li>
+            <li><a href="Login.html">Login</a></li>
+          </ul>
+        </nav>
+      </header>
+
+  <h1>Theater List in Makassar</h1>
+
+  <ul class="theater-list">
+    <li><a href="#" onclick="showPopup('cinema1')">Bioskop CGV Panakkukang Square</a></li>
+    <li><a href="#" onclick="showPopup('cinema2')">Bioskop Cinepolis Phinisi Point</a></li>
+    <li><a href="#" onclick="showPopup('cinema3')">Bioskop M`TOS XXI</a></li>
+    <li><a href="#" onclick="showPopup('cinema4')">Bioskop PANAKKUKANG XXI</a></li>
+    <li><a href="#" onclick="showPopup('cinema5')">Bioskop TSM XXI</a></li>
+  </ul>
+
+  <div id="popup-cinema1" class="popup-overlay">
+    <div class="popup-content">
+      <h2>Bioskop CGV Panakkukang Square</h2>
+      <p>Address: Jl. Adiyaksa, Pandang, Kec. Panakkukang, Kota Makassar, Sulawesi Selatan 90231</p>
+      <a href="https://www.google.com/maps/place/CGV+Panakkukang+Square/@-5.1578266,119.448636,15z/data=!4m2!3m1!1s0x0:0xa13824129ff5b534?sa=X&ved=2ahUKEwjHx5zD8uX_AhUbXGwGHdawBVUQ_BJ6BAhOEAA&ved=2ahUKEwjHx5zD8uX_AhUbXGwGHdawBVUQ_BJ6BAhgEAg" target="_blank">
+        <img src="img/cgv.jpeg" alt="Map" style="width: 400px; height: 300px;">
+      </a>
+      <span class="close-btn" onclick="hidePopup('cinema1')">X</span>
+    </div>
+  </div>
+  
+
+  <div id="popup-cinema2" class="popup-overlay">
+    <div class="popup-content">
+      <h2>Bioskop Cinepolis Phinisi Point</h2>
+      <p>Address: Jl. Metro Tj. Bunga No.2, Panambungan, Kec. Mariso, Kota Makassar, Sulawesi Selatan 90112</p>
+      <a href="https://www.google.com/maps/place/Cinepolis+-+Phinisi+Point+Mall/@-5.1536986,119.4029693,15z/data=!4m2!3m1!1s0x0:0x4cb5513bcfe95110?sa=X&ved=2ahUKEwi2sPzU8-X_AhUrV2wGHTaqDekQ_BJ6BAhTEAA&ved=2ahUKEwi2sPzU8-X_AhUrV2wGHTaqDekQ_BJ6BAhlEAg" target="_blank">
+        <img src="img/cinepolis.jpeg" alt="Map" style="width: 400px; height: 300px;">
+      </a>
+      <span class="close-btn" onclick="hidePopup('cinema2')">X</span>
+    </div>
+  </div>
+
+  <div id="popup-cinema3" class="popup-overlay">
+    <div class="popup-content">
+      <h2>Bioskop M`TOS XXI</h2>
+      <p>Address: Makassar Town Square, Jl. Perintis Kemerdekaan No.KM.7, Tamalanrea Jaya, Kec. Tamalanrea, Kota Makassar, Sulawesi Selatan 90245</p>
+      <a href="https://www.google.com/maps/place/M'Tos+XXI/@-5.1444277,119.4747559,15z/data=!4m6!3m5!1s0x2dbefcb82351459b:0xe9ba071591a22e42!8m2!3d-5.1444277!4d119.4747559!16s%2Fg%2F1tr2jycs?entry=ttu" target="_blank">
+        <img src="img/mtos.jpeg" alt="Map" style="width: 400px; height: 300px;">
+      </a>
+      <span class="close-btn" onclick="hidePopup('cinema3')">X</span>
+    </div>
+  </div>
+  </div>
+
+  <div id="popup-cinema4" class="popup-overlay">
+    <div class="popup-content">
+      <h2>Bioskop PANAKKUKANG XXI</h2>
+      <p>Address: Mall Panakkukang, Jl. Pengayoman, Masale, Kec. Panakkukang, Kota Makassar, Sulawesi Selatan 90233</p>
+      <a href="https://www.google.com/maps/place/Cinema+XXI+Mall+Panakkukang/@-5.1578341,119.447419,15z/data=!4m2!3m1!1s0x0:0x1bd98e56d2a60ec7?sa=X&ved=2ahUKEwiU943qjOb_AhXX6jgGHS1gA-0Q_BJ6BAhVEAA&ved=2ahUKEwiU943qjOb_AhXX6jgGHS1gA-0Q_BJ6BAhqEAg" target="_blank">
+        <img src="img/xxi mtos.jpeg" alt="Map" style="width: 400px; height: 300px;">
+      </a>
+      <span class="close-btn" onclick="hidePopup('cinema4')">X</span>
+    </div>
+  </div>
+  </div>
+
+  <div id="popup-cinema5" class="popup-overlay">
+    <div class="popup-content">
+      <h2>Bioskop TSM XXI</h2>
+      <p>Address: Trans Studio Mall, Jl. Metro Tj. Bunga, Maccini Sombala, Kec. Tamalate, Kota Makassar, Sulawesi Selatan 90134</p>
+      <a href="https://www.google.com/maps/place/TSM+XXI/@-5.159995,119.3944798,15z/data=!4m6!3m5!1s0x2dbf1d7c05555555:0x29a7f167950ac209!8m2!3d-5.159995!4d119.3944798!16s%2Fg%2F12vrmgrf7?entry=ttu" target="_blank">
+        <img src="img/tsm2.jpeg" alt="Map" style="width: 400px; height: 300px;">
+      </a>
+      <span class="close-btn" onclick="hidePopup('cinema5')">X</span>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    function showPopup(cinemaId) {
+      var popup = document.getElementById('popup-' + cinemaId);
+      popup.classList.add('show');
+    }
+
+    function hidePopup(cinemaId) {
+      var popup = document.getElementById('popup-' + cinemaId);
+      popup.classList.remove('show');
+    }
+  </script>
+</body>
+</html>
